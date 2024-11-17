@@ -139,13 +139,13 @@ body {
 /* PARA QUE EL TEXTO EN MOVIL NO SE VEA TAN PEQUEÑO */
 @media (max-width: 768px) {
     .productos-hero .hero-content p {
-        font-size: 1.5rem; 
+        font-size: 0.8rem; 
         margin-bottom: 1rem; 
         line-height: 1.5; 
     }
 
     .productos-hero .hero h1 {
-        font-size: 3rem;
+        font-size: 2rem;
         letter-spacing: 1px; 
     }
 }
