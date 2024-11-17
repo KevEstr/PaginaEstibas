@@ -518,7 +518,7 @@ body {
     }
 }
 
-/* Company Values */
+/* VALORES DE LA COMPAÑIA (MISION VISION ETC) */
 .company-values {
     padding: 3rem 0;
     background-color: #f4f4f4;
@@ -583,7 +583,8 @@ body {
     margin-bottom: 0;
 }
 
-/* Footer */
+/* FOOTER (EL DE ABAJO DEL TODO) */
+/* DEJE INDICADO ALGUNAS COSAS QUE NO SE USAN, POR SI SE BUSCA EN UN FUTURO AÑADIR COSAS AHÍ */
 
 .footer {
     background-color: white;
@@ -650,7 +651,7 @@ body {
     }
 }
 
-/* Contactos */
+/* CONTACTOS */
 .contacto-seccion {
     padding: 6rem 0;
     background-color: #f8f9fa;
@@ -814,7 +815,7 @@ form button:hover {
 
     
 
-/* Productos */
+/* PRODUCTOS */
 .productos-lista {
     padding: 6rem 0;
 }
@@ -873,3 +874,115 @@ form button:hover {
 .animate-fadeIn { animation: fadeIn 1s ease-out; }
 .animate-slideInLeft { animation: slideInLeft 1s ease-out; }
 .animate-slideInRight { animation: slideInRight 1s ease-out; }
+
+/* SECCIÓN DEL MODAL DE PRODUCTOS */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding: 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.2s ease;
+}
+
+.close:hover {
+    color: #bbb;
+    text-decoration: none;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 50px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ANIMACIONES DEL MODAL */
+.modal-content {
+    animation: zoomIn 0.6s;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: translateY(-50%) scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+    .modal {
+        padding: 10px;
+    }
+
+    .close {
+        right: 15px;
+        top: 15px;
+        font-size: 35px;
+    }
+
+    .modal-content {
+        max-width: 95%;
+    }
+
+    #caption {
+        width: 95%;
+        font-size: 14px;
+    }
+}
+
+/* MUY PEQUEÑOS */
+@media only screen and (max-width: 480px) {
+    .close {
+        right: 10px;
+        top: 10px;
+        font-size: 30px;
+    }
+
+    .modal-content {
+        max-width: 98%;
+    }
+}

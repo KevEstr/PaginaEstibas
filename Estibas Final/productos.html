@@ -129,19 +129,36 @@
             once: true,
         });
 
+        /* SECCIÓN PARA ANIMAR EL MODAL CON JS */
+
         function openModal(img) {
             var modal = document.getElementById("myModal");
             var modalImg = document.getElementById("imgModal");
             var captionText = document.getElementById("caption");
+            
             modal.style.display = "block";
+            void modal.offsetWidth;
+            modal.classList.add('show');
+            
             modalImg.src = img.src;
             captionText.innerHTML = img.alt;
         }
 
-        function closeModal() {
-            var modal = document.getElementById("myModal");
-            modal.style.display = "none";
-        }
-    </script>
-</body>
+                    function closeModal() {
+                        var modal = document.getElementById("myModal");
+                        modal.classList.remove('show');
+                        
+                        setTimeout(() => {
+                            modal.style.display = "none";
+                        }, 300); 
+                    }
+
+                    window.onclick = function(event) {
+                        var modal = document.getElementById("myModal");
+                        if (event.target === modal) {
+                            closeModal();
+                        }
+                    }
+        </script>
+    </body>
 </html>
