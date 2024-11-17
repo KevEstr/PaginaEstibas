@@ -139,13 +139,13 @@ body {
 /* PARA QUE EL TEXTO EN MOVIL NO SE VEA TAN PEQUEÑO */
 @media (max-width: 768px) {
     .productos-hero .hero-content p {
-        font-size: 1rem; 
+        font-size: 1.5rem; 
         margin-bottom: 1rem; 
         line-height: 1.5; 
     }
 
     .productos-hero .hero h1 {
-        font-size: 2rem;
+        font-size: 3rem;
         letter-spacing: 1px; 
     }
 }
@@ -349,10 +349,17 @@ body {
     transform: translateY(0);
 }
 
-.galeria-item {
-    touch-action: manipulation; /* Permitir interacción táctil */
+.galeria-item:active img {
+    transform: scale(1.1);
 }
 
+.galeria-item:active .galeria-overlay {
+    opacity: 1;
+}
+
+.galeria-item:active .galeria-overlay p {
+    transform: translateY(0);
+}
 
 /* Servicios */
 .servicios {
